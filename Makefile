@@ -13,7 +13,9 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 			main ))
 SRCS	+= $(addprefix src/utils/, $(addsuffix .c, \
 			put_pixel \
-			ft_abs ))
+			ft_abs \
+			ft_line \
+			clear_image ))
 SRCS	+= $(addprefix src/render/, $(addsuffix .c, \
 			background ))
 SRCS	+= $(addprefix src/utils/vector/, $(addsuffix .c, \

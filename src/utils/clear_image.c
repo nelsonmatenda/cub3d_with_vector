@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   background.c                                       :+:      :+:    :+:   */
+/*   clear_image.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matenda <matenda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 09:02:40 by matenda           #+#    #+#             */
-/*   Updated: 2025/05/26 21:42:20 by matenda          ###   ########.fr       */
+/*   Created: 2025/05/26 04:45:48 by matenda           #+#    #+#             */
+/*   Updated: 2025/05/26 04:47:45 by matenda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-static void	render_background(t_img *img)
+void	clean_image(t_img *img)
 {
-	int	i;
-	int	j;
+	int	y;
+	int	x;
 
-	i = -1;
-	while (++i <= WIDTH)
+	y = -1;
+	while (++y < HEIGHT)
 	{
-		j = -1;
-		while (++j <= HEIGHT / 2)
-			put_pixel(img, 0x03202F, i, j);
+		x = -1;
+		while (++x < WIDTH)
+			put_pixel(img, 0, x, y);
 	}
-	i = -1;
-	while (++i <= WIDTH)
-	{
-		j = HEIGHT / 2;
-		while (++j <= HEIGHT)
-			put_pixel(img, 0x020202, i, j);
-	}
-}
-
-void	background(t_game *game)
-{
-	render_background(&game->layers.cub3d);
 }
